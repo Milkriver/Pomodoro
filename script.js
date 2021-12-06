@@ -43,21 +43,17 @@ function handleTimer() {
     }
 
     if (isTimerActive) {
-        console.log(isTimerActive);
-        // clearInterval(timer)
         return;
     }
     
     let counterSeconds = startingTime(minutesTime.value, secondsTime.value);
 
-    //emitter.emit('startTimer', {})
     let timer = setInterval(() => {
         const time = timeCounterAdaptor(counterSeconds);
         minutesTime.value = addLidingZero(time.remainingTimeMinutes);
         secondsTime.value = addLidingZero(time.remainingTimeSeconds);
         if (counterSeconds === 0) {
 
-            //emitter.emit('finishTimer', {})
             clearInterval(timer)
             let r = document.querySelector('.ring');
             r.classList.add('ending')
