@@ -62,7 +62,6 @@ function handleTimer() {
     }, 1000)
 
     isTimerActive = true;
-    console.log(isTimerActive);
 };
 
 
